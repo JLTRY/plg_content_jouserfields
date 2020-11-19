@@ -142,7 +142,12 @@ class plgContentUserFields extends JPlugin
 				case 'imagelink':			
 					$content1 = print_r($this->getValueByFieldName($customFields, $params['image']), 1);
 					$content2 = print_r($this->getValueByFieldName($customFields, $params['link']), 1);
-					$content = preg_replace('/(<a.*>)(.*)(<\/a>)/', '\1'. ${content1} .'\3', $content2);
+					if (array_key_exists('title', $params)) {
+						$content3 = print_r($this->getValueByFieldName($customFields, $params['title']), 1);
+					} else {
+						$content3 = "";
+					}
+					$content = preg_replace('/(<a.*>)(.*)(<\/a>)/', '\1'. ${content1} . ${content3} .'\3', $content2);
 					break;
 				default:
 					 break;
