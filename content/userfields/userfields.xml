@@ -2,14 +2,14 @@
 <extension version="1.0" type="plugin" group="content">
 	<name>Content - UserFields</name>
 	<author>Jean-Luc TRYOEN</author>
-	<creationDate>July 2012</creationDate>
+	<creationDate>July 2020</creationDate>
 	<copyright>Copyright (C) 2012 JEan-Luc TRYOEN. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
 	<authorEmail>jltryoen@orange.fr</authorEmail>
 	<authorUrl>www.jltryoen.fr</authorUrl>
 	<version>1.0</version>
 	<description>UserFields plugin, use it with {userfields type=imagelink fields=image,link}</description>
-    <files>
+	<files>
 		<filename plugin="userfields">userfields.php</filename>
 	</files>
 </extension>
