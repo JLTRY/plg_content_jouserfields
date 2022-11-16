@@ -147,7 +147,7 @@ class plgContentUserFields extends JPlugin
 					} else {
 						$content3 = "";
 					}
-					$content = preg_replace('/(<a.*>)(.*)(<\/a>)/', '\1'. ${content1} . ${content3} .'\3', $content2);
+					$content = preg_replace('/(<a.*>)(.*)(<\/a>)/', '\1'. $content1 . $content3 .'\3', $content2);
 					break;
 				default:
 					 break;
