@@ -10,10 +10,13 @@
 
 // Check to ensure this file is included in Joomla!
 defined( '_JEXEC' ) or die( 'Restricted access' );
-
-jimport( 'joomla.plugin.plugin' );
-define('PF_REGEX_USERFIELDS_PATTERN', "#{userfields(.*?)}#s");
 use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
+use Joomla\CMS\Plugin\CMSPlugin as JPlugin;
+use Joomla\CMS\Factory as JFactory;
+
+
+define('PF_REGEX_USERFIELDS_PATTERN', "#{userfields(.*?)}#s");
+
 /**
 * UserFields Content Plugin
 *
