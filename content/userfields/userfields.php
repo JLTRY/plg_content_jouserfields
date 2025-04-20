@@ -142,7 +142,7 @@ class plgContentUserFields extends JPlugin
 		{
 			switch($params['type'])
 			{
-				case 'imagelink':			
+				case 'imagelink':
 					$content1 = print_r($this->getValueByFieldName($customFields, $params['image']), 1);
 					$content2 = print_r($this->getValueByFieldName($customFields, $params['link']), 1);
 					if (array_key_exists('title', $params)) {
