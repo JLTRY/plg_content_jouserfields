@@ -78,7 +78,7 @@ class plgContentUserFields extends JPlugin
 		// plugin only processes if there are any instances of the plugin in the text
 		if ($count) {
 			
-			$document =& JFactory::getDocument();
+			$document = JFactory::getDocument();
 			for ($i = 0; $i < $count; $i++)
 			{
 				$result = array();
