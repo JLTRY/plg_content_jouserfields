@@ -15,7 +15,7 @@ use Joomla\CMS\Plugin\CMSPlugin as JPlugin;
 use Joomla\CMS\Factory as JFactory;
 
 
-define('PF_REGEX_USERFIELDS_PATTERN', "#{userfields(.*?)}#s");
+define('PF_REGEX_USERFIELDS_PATTERN', "#{userfields ([^}]*?)}#s");
 
 /**
 * UserFields Content Plugin
@@ -61,8 +61,7 @@ class plgContentUserFields extends JPlugin
 		return $this->OnPrepareRow($row);
 	}
 
-		
-	
+
 	function onPrepareRow(&$row) 
 	{
 		//Escape fast
@@ -71,10 +70,10 @@ class plgContentUserFields extends JPlugin
 		}
  		if ( strpos( $row->text, '{userfields' ) === false ) {
 			return true;
-		}		
+		}
 		preg_match_all(PF_REGEX_USERFIELDS_PATTERN, $row->text, $matches);
 		// Number of plugins
-		$count = count($matches[0]);	
+		$count = count($matches[0]);
 		// plugin only processes if there are any instances of the plugin in the text
 		if ($count) {
 			
@@ -84,7 +83,6 @@ class plgContentUserFields extends JPlugin
 				$result = array();
 				if (@$matches[1][$i]) {
 					$inline_params = $matches[1][$i];
-				   
 					$pairs = explode(' ', trim($inline_params));
 					foreach ($pairs as $pair) {
 						$pos = strpos($pair, "=");
@@ -93,19 +91,14 @@ class plgContentUserFields extends JPlugin
 						$result[$key] = $value;
 					}
 					$p_content = $this->userfields($result);
-					$row->text = str_replace("{userfields" . $matches[1][$i] . "}", $p_content, $row->text);
-				}	
-				else
-				{
-					$p_content = $this->userfields($result);	
-					$row->text	= preg_replace('#{userfields.*}#', $p_content, $row->text);
+					$row->text = str_replace("{userfields " . $matches[1][$i] . "}", $p_content, $row->text);
 				}
 			}
 			
 		}
 		else
 		{
-			$row->text = str_replace("{userfields ", "erreur de syntaxe: {userfields style=normal|bold|italic}", $row->text);
+			$row->text = str_replace("{userfields ", "erreur de syntaxe: {userfields name=name}", $row->text);
 		}
 		return true;
 	}
@@ -137,7 +130,7 @@ class plgContentUserFields extends JPlugin
 		if ($user)
 		{
 			$customFields = FieldsHelper::getFields('com_users.user', JFactory::getUser(), true);
-		}		
+		}
 		if (isset($params['type']))
 		{
 			switch($params['type'])
@@ -156,7 +149,7 @@ class plgContentUserFields extends JPlugin
 					 break;
 			}
 		}
-		else	
+		else
 		{
 			if (property_exists($user, $params['name'])) { 
 				$content = print_r($user->{$params['name']}, 1);
@@ -166,7 +159,7 @@ class plgContentUserFields extends JPlugin
 			{
 				$content = print_r($this->getValueByFieldName($customFields, $params['name']), 1);
 			}
-		}			
+		}
 		return $content;
 	}
 }
