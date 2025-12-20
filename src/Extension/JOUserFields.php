@@ -104,38 +104,23 @@ class JOUserFields extends CMSPlugin implements SubscriberInterface
     */       
     function userfields( $params )
     {
+        if (isset($params['display']))
+        {
+            $display = $params['display'];
+        } else {
+            $display = true;
+        }
         $user =  Factory::getUser();
         if ($user)
         {
-            $customFields = FieldsHelper::getFields('com_users.user', Factory::getUser(), true);
+            $customFields = FieldsHelper::getFields('com_users.user', Factory::getUser(), $display);
         }
-        if (isset($params['type']))
-        {
-            switch($params['type'])
-            {
-                case 'imagelink':
-                    $content1 = print_r($this->getValueByFieldName($customFields, $params['image']), 1);
-                    $content2 = print_r($this->getValueByFieldName($customFields, $params['link']), 1);
-                    if (array_key_exists('title', $params)) {
-                        $content3 = print_r($this->getValueByFieldName($customFields, $params['title']), 1);
-                    } else {
-                        $content3 = "";
-                    }
-                    $content = preg_replace('/(<a.*>)(.*)(<\/a>)/', '\1'. $content1 . $content3 .'\3', $content2);
-                    break;
-                default:
-                     break;
-            }
+        if (property_exists($user, $params['name'])) { 
+            $content = print_r($user->{$params['name']}, 1);
         }
         else
         {
-            if (property_exists($user, $params['name'])) { 
-                $content = print_r($user->{$params['name']}, 1);
-            }
-            else
-            {
-                $content = print_r($this->getValueByFieldName($customFields, $params['name']), 1);
-            }
+            $content = print_r($this->getValueByFieldName($customFields, $params['name']), 1);
         }
         return $content;
     }

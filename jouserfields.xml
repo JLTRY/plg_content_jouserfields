@@ -15,4 +15,7 @@
 		<folder>src</folder>
 		<folder>language</folder>
 	</files>
+	<updateservers>
+		<server type="extension" priority="1" name="JO's User Fields update">https://raw.githubusercontent.com/JLTRY/plg_jouserfields/master/plg_content_jouserfields-update.xml</server>
+	</updateservers>
 </extension>
