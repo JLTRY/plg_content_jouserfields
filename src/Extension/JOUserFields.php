@@ -120,7 +120,11 @@ class JOUserFields extends CMSPlugin implements SubscriberInterface
         }
         else
         {
-            $content = print_r($this->getValueByFieldName($customFields, $params['name']), 1);
+            if ($this->getValueByFieldName($customFields, $params['name']) != '') {
+                $content = print_r($this->getValueByFieldName($customFields, $params['name']), 1);
+            } elseif (array_key_exists('default', $params) && $this->getValueByFieldName($customFields, $params['default']) != '') {
+                $content = print_r($this->getValueByFieldName($customFields, $params['default']), 1);
+            }
         }
         return $content;
     }

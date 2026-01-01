@@ -6,10 +6,10 @@
 		<element>mod_jocustomcode</element>
 		<type>module</type>
 		<client>site</client>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 		<infourl title="JO Custom Code">http://www.jltryoen.fr</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/JLTRY/plg_jouserfields/releases/download/v1.0.1/plg_jouserfields-1.0.1.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/JLTRY/plg_jouserfields/releases/download/v1.0.2/plg_content_jouserfields-1.0.2.zip</downloadurl>
 		</downloads>
 		<tags>
 			<tag>Stable</tag>
@@ -18,9 +18,9 @@
 		<maintainerurl>http://www.jltryoen.fr</maintainerurl>
 		<php_minimum>8.0</php_minimum>
 		<targetplatform name="joomla" version="(4\.[01234]|5\.[01234]|6\.[0])"/>
-		<sha256>B32232794B8292F5B81A71DE59327F72516E38D4D2ED5C273BC46343071E2F1E</sha256>
-		<sha384>3306CBB680396D53CA6F559192F809080B80AD6E963096AAE3B5677A1AAE6613FEBCA1F0E923F468CFDFF31997FC8E2D</sha384>
-		<sha512>C97E601F6639A673EB58C84810396D94B31EEFD1F78E3E640CA61D011F1E76CBA332E4B9B7D8ADE5406CDBFB41B2CADB354DDE33243BE9F0C34BF77775D5D18A</sha512>
+		<sha256>1D3E5A907F7FF84939AFBCD0AC9B3934B31BEC80FDC6C5582B79F2AC2B89447B</sha256>
+		<sha384>B1E13DA5813759CC44A50CAE7503858248E787C1BCB244E84188000EF1A4473EE684D7CB766A5C04D27A21B57C6F2C9B</sha384>
+		<sha512>432272B12786993DEEC666C1DAF5E2B6D9563763BBF49479F4AAD0C3B1ACA6EA4B270092817C5C26D85ED99666C42C8CE18C0172722EB0BFF1A6E40D49F1506B</sha512>
 	</update>
 </updates>
 
