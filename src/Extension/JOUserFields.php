@@ -110,10 +110,10 @@ class JOUserFields extends CMSPlugin implements SubscriberInterface
         } else {
             $display = true;
         }
-        $user =  Factory::getUser();
+        $user =  Factory::getApplication()->getIdentity();
         if ($user)
         {
-            $customFields = FieldsHelper::getFields('com_users.user', Factory::getUser(), $display);
+            $customFields = FieldsHelper::getFields('com_users.user', $user, $display);
         }
         if (property_exists($user, $params['name'])) { 
             $content = print_r($user->{$params['name']}, 1);
