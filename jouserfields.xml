@@ -7,7 +7,7 @@
 	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
 	<authorEmail>jltryoen@orange.fr</authorEmail>
 	<authorUrl>www.jltryoen.fr</authorUrl>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<description>PLG_CONTENT_JOUSERFIELDS_DESCRIPTION</description>
 	<namespace path="src">JLTRY\Plugin\Content\JOUserFields</namespace>
 	<files>
@@ -16,6 +16,6 @@
 		<folder>language</folder>
 	</files>
 	<updateservers>
-		<server type="extension" priority="1" name="JO's User Fields update">https://raw.githubusercontent.com/JLTRY/plg_jouserfields/master/plg_content_jouserfields-update.xml</server>
+		<server type="extension" priority="1" name="JO's User Fields update">https://raw.githubusercontent.com/JLTRY/plg_content_jouserfields/master/plg_content_jouserfields-update.xml</server>
 	</updateservers>
 </extension>

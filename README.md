@@ -8,7 +8,7 @@ Download <a href="https://github.com/JLTRY/plg_content_jouserfields/releases/lat
 Joomla 5.0+ 
 
 ## Features
-Joomla plugin allows to insert user fields in articles
+Joomla plugin that allows to insert user fields in articles
 
 Syntax: insert ```{userfields name=field_name}``` in an article
 

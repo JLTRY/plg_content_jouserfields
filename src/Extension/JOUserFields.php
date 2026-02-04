@@ -79,7 +79,7 @@ class JOUserFields extends CMSPlugin implements SubscriberInterface
         }
         else
         {
-            $row->text = str_replace("{userfields ", "erreur de syntaxe: {userfields name=name}", $row->text);
+            $row->text = str_replace("{userfields ", "erreur de syntaxe: {userfields name=\"name\"}", $row->text);
         }
         return true;
     }
